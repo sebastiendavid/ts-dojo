@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { AppState } from '../../state';
+import { AppState } from '../state';
+import { resetText, updateText } from './actions';
+import './index.css';
 import {
   StarWarsDispatchProps,
   StarWarsProps,
   StarWarsStateProps,
-} from '../types';
-import './index.css';
+} from './types';
 
 const mapStateToProps: MapStateToProps<
   StarWarsStateProps,
@@ -17,8 +18,8 @@ const mapStateToProps: MapStateToProps<
 });
 
 const mapDispatchToProps: MapDispatchToProps<StarWarsDispatchProps, {}> = {
-  resetText: () => ({ type: 'RESET_TEXT' }),
-  updateText: payload => ({ type: 'UPDATE_TEXT', payload }),
+  resetText,
+  updateText,
 };
 
 class StarWarsComponent extends React.Component<StarWarsProps> {

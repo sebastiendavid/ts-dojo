@@ -1,5 +1,5 @@
 import * as React from 'react';
-import StarWars from './starwars/components';
+import StarWars from './starwars';
 
 class App extends React.Component {
   public render() {
